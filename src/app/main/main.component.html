@@ -1,0 +1,240 @@
+
+<!-- Main -->
+
+<section class="hero">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <a class="hero-brand" href="index.html" title="Home"><img alt="Bell Logo" src="../../assets/img/logo.png" style="width: 280px;margin-left: -10px"></a>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <h1>
+        Get in your values/image!
+      </h1>
+
+      <a class="btn btn-full" id="mammobtn" href="#about" data-toggle="modal" data-target="#mamographi" style="margin-right: 10px">Mammography Image</a>
+
+      <a class="btn btn-full" id="numericbtn" href="#about" data-toggle="modal" data-target="#numerique">Numeric Values</a>
+    </div>
+  </div>
+
+</section>
+<!-- /Main -->
+
+
+
+<!-- model numirc input -->
+<div class="modal fade" id="numerique">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header " >
+        <h4 class="modal-title offset-4"> Numeric values </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" >
+
+        <form class="needs-validation" #numericForm="ngForm" (ngSubmit)="predictNum(numericForm.value)">
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" name="radiusMean" ngModel  placeholder=" radios mean" style="width: 200px" />
+
+            </div>
+
+            <div class="form-group col-md-6">
+              <input type="text"  placeholder=" parameter mean" name="perimeterMean" ngModel style="width: 200px" />
+            </div>
+
+            <div class="form-group col-md-6">
+              <input type="text" name="smoothnessMean" ngModel  placeholder=" smothness mean" style="width: 200px"  />
+
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text"  name="concavityMean" ngModel placeholder=" convavity mean" style="width: 200px" />
+            </div>
+
+            <div class="form-group col-md-6">
+              <input type="text"  name="symmetryeMean" ngModel placeholder=" symmetry mean" style="width: 200px" />
+
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" name="textureMean" ngModel placeholder=" texture mean" style="width: 200px"/>
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text"  name="areaMean" ngModel placeholder=" area mean" style="width: 200px"  />
+
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" name="compactnessMean" ngModel  placeholder=" compactness mean" style="width: 200px"/>
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" name="concavepointsMean" ngModel placeholder="convace points mean" style="width: 200px" />
+
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" name="fractaldimensionMean" ngModel placeholder="fractal mean" style="width: 200px" />
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-secondary btn-lg btn-block form-control"  style="background-color: #1E90FF ;margin-top: 9px">save</button>
+            <button type="button" id="cn" class="close" data-dismiss="modal" style="color: red">cancel</button>
+          </div>
+
+
+        </form>
+
+
+
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<!-- model mammography input -->
+<div class="modal fade" id="mamographi">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header " >
+        <h4 class="modal-title offset-4"> Mammogray Image </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+
+        <form class="needs-validation" #mammographyForm="ngForm" (ngSubmit)="predictMammography()" >
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="file" name="image" (change)="onFileSelected($event)"  style="width: 200px" />
+
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" id="cn1" class="btn btn-secondary btn-lg btn-block form-control" data-dismiss="modal"  style="background-color: #1E90FF ;margin-top: 9px">Cancel</button>
+
+              <button type="submit" class="btn btn-secondary btn-lg btn-block form-control" value="voter"    style="background-color: #9ACD32;">Save</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="maligne">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h2 class="modal-title offset-4"> Result </h2>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <img src="../../assets/img/m.png" class="rimg" style="display: inline;width: 60px" >
+        <h1 style="display: inline"> Malignant </h1>
+
+        <button type="submit" class="btn btn-secondary btn-lg btn-block" data-dismiss="modal" style="background-color: #1E90FF ;margin-top: 9px">Cancel</button>
+        <h3>You should always check a doctor!</h3>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="bening">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h2 class="modal-title offset-4"> Result </h2>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <img src="../../assets/img/b.png" class="rimg" style="display: inline;width: 60px" >
+        <h1 style="display: inline"> Benign </h1>
+
+        <button type="submit" class="btn btn-secondary btn-lg btn-block" data-dismiss="modal" style="background-color: #1E90FF ;margin-top: 9px">Cancel</button>
+        <h3>You should always check a doctor!</h3>
+
+      </div>
+    </div>
+  </div>
+</div>
+<button class="" id="b" data-toggle="modal" data-target="#bening" style="display: none">B</button>
+<button class="" id="m" data-toggle="modal" data-target="#maligne" style="display: none">M</button>
+
+
+
+
+<div class="modal fade" id="maligne1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h2 class="modal-title offset-4"> Result </h2>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <img src="../../assets/img/m.png" class="rimg" style="display: inline;width: 60px" >
+        <h3 style="display: inline"> {{reslutClass}}</h3><br>
+        <h1 style="display: inline"> Malignant </h1>
+
+        <button type="submit" class="btn btn-secondary btn-lg btn-block" data-dismiss="modal" style="background-color: #1E90FF ;margin-top: 9px">Cancel</button>
+        <h3>You should always check a doctor!</h3>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="bening1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h2 class="modal-title offset-4"> Result </h2>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <img src="../../assets/img/b.png" class="rimg" style="display: inline;width: 60px" >
+        <h3 style="display: inline"> {{reslutClass}} </h3><br>
+
+        <h1 style="display: inline"> Benign </h1>
+
+        <button type="submit" class="btn btn-secondary btn-lg btn-block" data-dismiss="modal" style="background-color: #1E90FF ;margin-top: 9px">Cancel</button>
+        <h3>You should always check a doctor!</h3>
+
+      </div>
+    </div>
+  </div>
+</div>
+<button class="" id="b1" data-toggle="modal" data-target="#bening1" style="display: none">B</button>
+<button class="" id="m1" data-toggle="modal" data-target="#maligne1" style="display: none">M</button>
