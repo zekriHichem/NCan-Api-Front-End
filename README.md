@@ -45,7 +45,7 @@ This Uses Cases   diagram to show how you can use this application
 <img src = "input_image.png" alt="this is image">
 
 ### Result : 
-	<img src = "result_mamm.png" alt="this is image">
+<img src = "result_mamm.png" alt="this is image">
 
 
 
