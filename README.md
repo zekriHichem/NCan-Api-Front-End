@@ -28,17 +28,25 @@ this project is divided in 4 composents :
 ### sequence diagram
 
 This sequence diagram to show how this project intercat with Api
-`
-### Activity diagram
-This Activity  diagram to show how you can use this application 
+<img src = "seq.png" alt="this is image">
+
+### Uses Cases diagram
+This Uses Cases   diagram to show how you can use this application 
+<img src = "cas.png" alt="this is image">
 
 ##  ergonomics
 ### home page : 
 <img src = "interface.png" alt="this is image">
 
 ### digital values : 
+<img src = "input_numeric.png" alt="this is image">
+
 ### mammography image : 
+<img src = "input_image.png" alt="this is image">
+
 ### Result : 
+	<img src = "result_mamm.png" alt="this is image">
+
 
 
 ## Contributors
